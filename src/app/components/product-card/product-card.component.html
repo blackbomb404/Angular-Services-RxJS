@@ -1,0 +1,19 @@
+<div>
+  <img src="assets/images/product-image-placeholder.png" alt="product-image">
+</div>
+<p>Name: <strong>{{ name }}</strong></p>
+<p>Price: <strong>${{ price }}</strong></p>
+{{amount}}
+<div>
+  <div class="counter-wrapper" [class.display]="onCart">
+
+    <button type="button" class="decrement-btn">-</button>
+    <input type="number" [(ngModel)]="amount" class="counter" min="1" [value]="amount" (input)="updateAmount()" />
+    <button type="button" class="increment-btn">+</button>
+
+  </div>
+  <button type="button" class="add-to-cart-btn" [class.on-cart]="onCart"
+  (click)="onCart ? removeFromCart() : addToCart()">
+    {{ onCart ? 'Remove' : 'Add to Cart' }}
+  </button>
+</div>

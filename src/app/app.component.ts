@@ -1,13 +1,17 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'state-management-with-angular-services-and-rxjs';
+  links = [
+    { text: 'Home', path: '' },
+    { text: 'Shopping Cart', path: 'shopping-cart' },
+    { text: 'Product View', path: 'product-view' }
+  ]
 }

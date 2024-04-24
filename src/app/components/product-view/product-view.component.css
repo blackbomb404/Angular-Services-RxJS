@@ -1,0 +1,38 @@
+:host {
+  display: block;
+  border: 1px solid gray;
+  padding: .5rem;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+ul li p {
+}
+
+.radio-wrapper {
+  display: inline-flex;
+  column-gap: 2rem;
+  border-bottom: 1px solid gray;
+  padding: 0 1rem .5rem;
+  margin-bottom: 1.75rem;
+}
+.radio-wrapper label {
+  margin-left: .25rem;
+  letter-spacing: 2px;
+}
+
+.products-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem 1rem;
+  padding: 1rem;
+}

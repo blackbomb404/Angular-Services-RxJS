@@ -1,0 +1,7 @@
+<h2>Shopping Cart</h2>
+@for (item of items$ | async; track item.product.id) {
+  <p>{{ item | json }}</p>
+}@empty {
+  <p class="empty-cart-message">It seems like the shopping cart is empty...</p>
+}
+<p class="total">Total <strong>${{items$ | async | cartTotal}}</strong></p>

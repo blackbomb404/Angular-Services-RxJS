@@ -1,0 +1,37 @@
+<span>Select the products view mode:</span>
+<div class="radio-wrapper">
+  <div>
+    <input type="radio" name="view-mode" id="view-mode-grid" (change)="viewMode = 'grid'" [checked]="viewMode === 'grid'">
+    <label for="view-mode-grid">Grid</label>
+  </div>
+
+  <div>
+    <input type="radio" name="view-mode" id="view-mode-list" (change)="viewMode = 'list'" [checked]="viewMode === 'list'">
+    <label for="view-mode-list">List</label>
+  </div>
+</div>
+
+@switch (viewMode) {
+  @case ('grid') {
+    <section class="products-grid" [style.display]="viewMode === 'grid' ? '' : 'none'">
+      @for (product of products; track product.id) {
+        <app-product-card
+          [id]="product.id"
+          [name]="product.name"
+          [price]="product.price" />
+      }
+    </section>
+  }
+  @case ('list'){
+    <ul class="products-list" [style.display]="viewMode === 'list' ? '' : 'none'">
+      @for(product of products; track product.id){
+        <li>
+          <p>Name: <strong>{{ product.name }}</strong></p>
+          <p>Price: <strong>{{ product.price }}</strong></p>
+        </li>
+      }
+    </ul>
+  }
+}
+
+
